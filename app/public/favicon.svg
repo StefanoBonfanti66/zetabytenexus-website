@@ -1,3 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <text y="0.9em" font-size="80">🏆</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .z { fill: none; stroke: #3a5a5c; stroke-width: 4; stroke-linecap: square; }
+    .n { fill: #3a5a5c; }
+    @media (prefers-color-scheme: dark) {
+      .z { stroke: #e8e5e0; }
+      .n { fill: #e8e5e0; }
+    }
+  </style>
+  <path class="z" d="M4.5 9h16l-9 12h16" />
+  <rect class="n" x="14" y="13" width="4" height="4" rx="0.5" />
 </svg>

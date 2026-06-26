@@ -1,40 +1,45 @@
-# Project: NOME_PROGETTO
+# PROJECT_AI_NOTES.md — zetabytenexus-website
 
-Template per nuovi progetti — personalizza questo file dopo aver clonato il repository.
-Compila le sezioni sottostanti per tracciare obiettivi, decisioni e progresso delle sessioni OpenCode.
+## Scopo
 
-## Obiettivo
-- Scopo:
-- Stato attuale:
-- Risultato atteso della sessione:
+Landing page istituzionale di ZetaByteNexus: presentazione del framework e del
+metodo ZetaByteNexus, canale di contatto/lead.
 
-## Stack e vincoli
-- Frontend: React 19 + TypeScript + Vite + TailwindCSS
-- Backend: Supabase (Auth, Postgres RLS, Storage)
-- Database: Postgres con RLS multi-tenancy
-- Infra: Vercel + GitHub Actions
-- Vincoli tecnici:
-- Vincoli di piano/free tier:
+## Stack
 
-## Decisioni prese
-- [YYYY-MM-DD] ...
+- React 19 + TypeScript + Vite 6 + TailwindCSS v4
+- Deploy target: da decidere (Vercel / GitHub Pages)
 
-## Lavoro svolto
-- File creati:
-- File modificati:
-- Test eseguiti:
+## Stato attuale — 2026-06-26
 
-## TODO aperti
-1. ...
-2. ...
+- **Homepage completa** — build pulita (0 errori, 0 warning), QA passed
+- 7 sezioni: Hero, ProblemSection, FrameworkSection, WhatWeBuildSection,
+  WhySection, ContactSection, Footer + Header
+- Design system: palette petrolio/warm-white/antracite, IBM Plex Serif + Inter
+- Favicon brandizzata ZBN con supporto dark mode
+- Responsive desktop + mobile, menu accessibile, anchor navigation nativa
+- Pronta per deploy su dominio zetabytenexus.it
 
-## Problemi aperti
-- Problema:
-- Ipotesi:
-- Blocco attuale:
+## Vincoli fase 1
 
-## File toccati
-- ...
+- Solo frontend statico, nessun backend
+- Form contatti non operativo (solo CTA + email + eventuali riferimenti diretti)
+- Singola pagina verticale, nessun routing interno
+- Contenuti hardcoded in React, nessun CMS
+- No dark mode, no multi-lingua, no animazioni complesse
 
-## Prossimo step suggerito
-- ...
+## Decisioni approvate
+
+- **Tono**: sobrio, tecnico, autorevole, industrial-luxury
+- **Palette**: bianco sporco + antracite + accento petrolio (#3a5a5c)
+- **Tipografia**: serif per titoli (IBM Plex Serif), sans per corpo (Inter)
+- **Struttura pagina**: Header → Hero → Problem → Framework → "Cosa realizziamo" → Why ZBN → Contact → Footer
+- **Logo**: logo-azienda.png (provvisorio)
+- **Repo separato da opencode-config**: sì
+- **Obsidian**: solo nota overview, nessun duplicato
+
+## Prossimi step
+
+1. Deploy su dominio zetabytenexus.it (Vercel o GitHub Pages)
+2. Eventuale form contatti funzionante (fase 2)
+3. Eventuali ritocchi SEO e performance
