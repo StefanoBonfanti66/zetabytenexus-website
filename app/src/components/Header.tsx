@@ -52,7 +52,7 @@ function Header() {
             </a>
           ))}
           <a href="#contact"
-             className="ml-4 px-4 py-2 text-sm border border-accent text-accent hover:bg-accent hover:text-text-inverse no-underline transition-colors duration-200">
+             className="ml-4 px-4 py-2 text-sm border border-accent text-accent hover:bg-accent hover:text-white no-underline transition-colors duration-200">
             Parlane con noi
           </a>
         </nav>
@@ -83,7 +83,7 @@ function Header() {
             </a>
           ))}
           <a href="#contact" onClick={closeMenu}
-             className="mt-4 px-4 py-2 text-sm border border-accent text-accent hover:bg-accent hover:text-text-inverse no-underline transition-colors duration-200 text-center">
+             className="mt-4 px-4 py-2 text-sm border border-accent text-accent hover:bg-accent hover:text-white no-underline transition-colors duration-200 text-center">
             Parlane con noi
           </a>
         </nav>

@@ -42,7 +42,7 @@ function WhySection() {
             Se vuoi saperne di più o hai un progetto in mente, parliamone.
           </p>
           <a href="#contact"
-             className="inline-block px-6 py-3 bg-accent text-text-inverse text-sm no-underline hover:bg-accent-hover transition-colors duration-200">
+             className="inline-block px-6 py-3 bg-accent text-white text-sm no-underline hover:bg-accent-hover transition-colors duration-200">
             Contatto
           </a>
         </div>

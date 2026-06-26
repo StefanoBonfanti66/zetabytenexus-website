@@ -37,15 +37,24 @@ Agenti interni definiti in opencode-config:
 ## Current Focus — 2026-06-26
 
 ### Completato
-- Creazione repo da template `triathlon-starter`
-- Provisioning struttura docs standard
-- Copia template aziendali e asset brand
-- Installazione dipendenze
+- **Homepage istituzionale completa e live su `https://www.zetabytenexus.it`**
+  - 7 sezioni + Header + Footer (Hero, ProblemSection, FrameworkSection, WhatWeBuildSection, WhySection, ContactSection)
+  - Design system: palette petrolio/warm-white/antracite, IBM Plex Serif + Inter
+  - Favicon brandizzata ZBN con dark mode support
+  - Responsive desktop + mobile, menu accessibile con aria + ESC focus management
+  - Anchor navigation nativa con scroll-padding-top
+- **Build QA superata** (0 errori, 0 warning)
+- **Deploy Vercel** — progetto rinominato in `zetabytenexus`, alias `www.zetabytenexus.it`
+- **Fix CSS layers**: spostati stili globali in `@layer base` per evitare override su utility Tailwind
+- **Fix leggibilità pulsanti**: testo cambiato da `text-text-inverse` (#e8e5e0) a `text-white` (#ffffff)
+- .env copiato da .env.example
 
-### Da fare
-- Personalizzare layout e contenuti del sito istituzionale
-- Definire posizionamento e offerta servizi
+### Da fare / Mancante
+- Disabilitare Deployment Protection su Vercel (Settings → Deployment Protection) per accesso pubblico senza login
+- Aggiungere form contatti funzionante (fase 2)
+- Ritocchi SEO e performance
+- Definire posizionamento e offerta servizi in `docs/leads/`
 - Preparare pagina lead generation / contatti
 
 ### Prossimo step concreto
-Aprire `docs/bootstrap.md` e `app/src/` per iniziare la personalizzazione.
+Disabilitare Deployment Protection su Vercel, poi eventuale form contatti e lead pipeline.
