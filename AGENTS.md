@@ -34,9 +34,9 @@ Agenti interni definiti in opencode-config:
 - Config globale vive in `opencode-config`.
 - Dati reali del progetto (lead, preventivi, fatture) vivono in QUESTO repo.
 
-## Current Focus — 2026-06-26
+## Current Focus — 2026-07-03
 
-### Completato
+### Completato (sessioni precedenti)
 - **Homepage istituzionale completa e live su `https://www.zetabytenexus.it`**
   - 7 sezioni + Header + Footer (Hero, ProblemSection, FrameworkSection, WhatWeBuildSection, WhySection, ContactSection)
   - Design system: palette petrolio/warm-white/antracite, IBM Plex Serif + Inter
@@ -49,12 +49,19 @@ Agenti interni definiti in opencode-config:
 - **Fix leggibilità pulsanti**: testo cambiato da `text-text-inverse` (#e8e5e0) a `text-white` (#ffffff)
 - .env copiato da .env.example
 
-### Completato
+### Completato (03-07-2026)
 - Disabilitata Deployment Protection su Vercel per accesso pubblico senza login
-- Aggiungere form contatti funzionante (fase 2)
+- Aggiunta immagine decorativa (`img-homepage.png`) nella Hero Section (colonna destra, opacità 20%, dietro FrameworkDiagram)
+- Immagine ottimizzata da 1.3 MB a 250 KB
+- Build QA superata (0 errori, 0 warning)
+- Commit e push su main
+
+### Da fare / Mancante
+- Form contatti funzionante (fase 2)
 - Ritocchi SEO e performance
 - Definire posizionamento e offerta servizi in `docs/leads/`
 - Preparare pagina lead generation / contatti
+- Convertire immagine in WebP per performance migliori
 
 ### Prossimo step concreto
-Disabilitare Deployment Protection su Vercel, poi eventuale form contatti e lead pipeline.
+Verificare deploy Vercel completato, poi form contatti e lead pipeline.
