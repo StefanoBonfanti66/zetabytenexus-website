@@ -49,8 +49,8 @@ Agenti interni definiti in opencode-config:
 - **Fix leggibilità pulsanti**: testo cambiato da `text-text-inverse` (#e8e5e0) a `text-white` (#ffffff)
 - .env copiato da .env.example
 
-### Da fare / Mancante
-- Disabilitare Deployment Protection su Vercel (Settings → Deployment Protection) per accesso pubblico senza login
+### Completato
+- Disabilitata Deployment Protection su Vercel per accesso pubblico senza login
 - Aggiungere form contatti funzionante (fase 2)
 - Ritocchi SEO e performance
 - Definire posizionamento e offerta servizi in `docs/leads/`

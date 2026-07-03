@@ -41,7 +41,14 @@ function Hero() {
               </a>
             </div>
           </div>
-          <div className="hidden md:flex justify-center items-center">
+          <div className="relative hidden md:flex justify-center items-center">
+            <img
+              src="/img-homepage.png"
+              alt=""
+              className="absolute inset-0 w-full h-full object-contain opacity-20 pointer-events-none select-none"
+              aria-hidden="true"
+              loading="lazy"
+            />
             <FrameworkDiagram />
           </div>
         </div>
