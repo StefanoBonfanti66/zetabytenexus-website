@@ -34,7 +34,7 @@ Agenti interni definiti in opencode-config:
 - Config globale vive in `opencode-config`.
 - Dati reali del progetto (lead, preventivi, fatture) vivono in QUESTO repo.
 
-## Current Focus — 2026-07-03
+## Current Focus — 2026-07-08
 
 ### Completato (sessioni precedenti)
 - **Homepage istituzionale completa e live su `https://www.zetabytenexus.it`**
@@ -56,6 +56,12 @@ Agenti interni definiti in opencode-config:
 - Build QA superata (0 errori, 0 warning)
 - Commit e push su main
 
+### Completato (08-07-2026 - questa sessione)
+- **Icône social Instagram, LinkedIn, Facebook in Header e Footer** (commit `546c398`)
+- **Fix configurazione Vercel**: creato `vercel.json` in root per build da directory `app/` (commit `a4f5562`)
+- **Disabilitato CodeQL default setup** su GitHub per risolvere conflitto con workflow avanzato
+- **Deploy Vercel funzionante** con icone social live su `www.zetabytenexus.it`
+
 ### Da fare / Mancante
 - Form contatti funzionante (fase 2)
 - Ritocchi SEO e performance
@@ -64,4 +70,4 @@ Agenti interni definiti in opencode-config:
 - Convertire immagine in WebP per performance migliori
 
 ### Prossimo step concreto
-Verificare deploy Vercel completato, poi form contatti e lead pipeline.
+Form contatti e lead pipeline.
