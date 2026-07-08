@@ -1,8 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
-
-export const config = {
-  runtime: 'nodejs22.x',
-}
+import { Resend } from 'resend'
 
 type ContactBody = {
   name: string
@@ -10,14 +7,7 @@ type ContactBody = {
   message: string
 }
 
-export default async function handler(request: Request): Promise<Response> {
-  if (request.method !== 'POST') {
-    return new Response(JSON.stringify({ error: 'Method not allowed' }), {
-      status: 405,
-      headers: { 'content-type': 'application/json' },
-    })
-  }
-
+export async function POST(request: Request): Promise<Response> {
   const supabaseUrl = process.env.VITE_SUPABASE_URL
   const supabaseKey = process.env.SUPABASE_SERVICE_KEY
 
@@ -60,6 +50,26 @@ export default async function handler(request: Request): Promise<Response> {
       status: 500,
       headers: { 'content-type': 'application/json' },
     })
+  }
+
+  const resendApiKey = process.env.RESEND_API_KEY
+  if (resendApiKey) {
+    try {
+      const resend = new Resend(resendApiKey)
+      await resend.emails.send({
+        from: 'info@zetabytenexus.it',
+        to: 'info.zetabytenexus@gmail.com',
+        subject: `Nuovo contatto dal sito — ${name.trim()}`,
+        html: `<h2>Nuovo messaggio dal sito zetabytenexus.it</h2>
+<hr>
+<p><strong>Nome:</strong> ${name.trim()}</p>
+<p><strong>Email:</strong> ${email.trim()}</p>
+<p><strong>Messaggio:</strong></p>
+<blockquote style="white-space:pre-wrap">${message.trim()}</blockquote>`,
+      })
+    } catch {
+      /* notification email is optional */
+    }
   }
 
   return new Response(JSON.stringify({ ok: true }), {
