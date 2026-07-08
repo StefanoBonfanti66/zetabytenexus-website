@@ -5,33 +5,6 @@
     "opencode-antigravity-auth@beta"
   ],
   "mcp": {
-    "github": {
-      "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "@modelcontextprotocol/server-github"
-      ],
-      "environment": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "SET_IN_LOCAL_CONFIG"
-      }
-    },
-    "supabase": {
-      "type": "remote",
-      "url": "https://mcp.supabase.com/mcp",
-      "headers": {
-        "Authorization": "Bearer SET_IN_LOCAL_CONFIG"
-      },
-      "oauth": false
-    },
-    "vercel": {
-      "type": "remote",
-      "url": "https://mcp.vercel.com",
-      "headers": {
-        "Authorization": "Bearer SET_IN_LOCAL_CONFIG"
-      },
-      "oauth": false
-    },
     "filesystem": {
       "type": "local",
       "command": [
@@ -58,13 +31,6 @@
         "-y",
         "@ericthered926/duckduckgo-mcp-server"
       ]
-    },
-    "render": {
-      "type": "remote",
-      "url": "https://mcp.render.com/mcp",
-      "headers": {
-        "Authorization": "Bearer rnd_WgN1Cfw0iwwRTYeSA3j5opTim2lR"
-      }
     }
   }
 }
