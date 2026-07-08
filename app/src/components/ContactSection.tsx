@@ -1,5 +1,4 @@
 import { type FormEvent, useState } from 'react'
-import { supabase } from '../supabaseClient'
 
 function ContactSection() {
   const [name, setName] = useState('')
@@ -11,21 +10,29 @@ function ContactSection() {
     e.preventDefault()
     setStatus('sending')
 
-    const { error } = await supabase.from('contacts').insert({
-      name: name.trim(),
-      email: email.trim(),
-      message: message.trim(),
-    })
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          message: message.trim(),
+        }),
+      })
 
-    if (error) {
+      if (!res.ok) {
+        setStatus('error')
+        return
+      }
+
+      setStatus('sent')
+      setName('')
+      setEmail('')
+      setMessage('')
+    } catch {
       setStatus('error')
-      return
     }
-
-    setStatus('sent')
-    setName('')
-    setEmail('')
-    setMessage('')
   }
 
   const inputClasses =
