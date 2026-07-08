@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preventivo 2026-07-001 - ZetaByteNexus</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4; margin: 0; }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 10pt; line-height: 1.5; color: #1a1a1a; background: #fff; }
+  .page { width: 210mm; min-height: 297mm; padding: 20mm 18mm; }
+  .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; border-bottom: 2px solid #0d6e6e; padding-bottom: 16px; }
+  .company-info { flex: 1; }
+  .company-logo { max-width: 140px; height: auto; margin-bottom: 8px; }
+  .company-details { font-size: 9pt; line-height: 1.6; color: #333; }
+  .doc-title { text-align: right; }
+  .doc-title h1 { font-size: 22pt; font-weight: 700; color: #0d6e6e; margin-bottom: 4px; }
+  .doc-title .subtitle { font-size: 10pt; color: #666; }
+  .client-info { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 24px; margin-bottom: 20px; font-size: 10pt; }
+  .client-info div { display: flex; }
+  .client-info .label { font-weight: 600; color: #0d6e6e; min-width: 80px; }
+  .section { margin-bottom: 24px; }
+  .section h2 { font-size: 13pt; font-weight: 600; color: #0d6e6e; border-bottom: 1px solid #e0e0e0; padding-bottom: 6px; margin-bottom: 12px; }
+  .section h3 { font-size: 11pt; font-weight: 600; color: #333; margin-bottom: 8px; }
+  .objectives ul { margin-left: 18px; margin-bottom: 12px; }
+  .objectives li { margin-bottom: 4px; }
+  .scope-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .scope-box { background: #f8faf9; border: 1px solid #e0e6e3; border-radius: 6px; padding: 14px; }
+  .scope-box h4 { font-size: 10pt; font-weight: 700; color: #0d6e6e; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .scope-box ul { list-style: none; }
+  .scope-box li { font-size: 9.5pt; margin-bottom: 6px; padding-left: 16px; position: relative; }
+  .scope-box li::before { content: "•"; color: #0d6e6e; font-weight: bold; position: absolute; left: 0; }
+  .risks ul { margin-left: 18px; }
+  .risks li { font-size: 9.5pt; margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 9.5pt; }
+  th, td { padding: 10px 12px; text-align: left; border: 1px solid #e0e6e3; }
+  th { background: #0d6e6e; color: #fff; font-weight: 600; font-size: 9pt; }
+  td { color: #333; }
+  tbody tr:nth-child(even) td { background: #f8faf9; }
+  tbody tr.total-row td { background: #eef5f4; font-weight: 700; color: #0d6e6e; }
+  td.right { text-align: right; }
+  .notes { font-size: 9pt; color: #666; margin-top: 10px; line-height: 1.6; }
+  .price-model { background: #f8faf9; border: 1px solid #e0e6e3; border-radius: 6px; padding: 14px; }
+  .price-model p { margin-bottom: 8px; }
+  .terms { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .terms-box { background: #f8faf9; border: 1px solid #e0e6e3; border-radius: 6px; padding: 14px; }
+  .terms-box h4 { font-size: 10pt; font-weight: 700; color: #0d6e6e; margin-bottom: 10px; }
+  .terms-box ul { list-style: none; font-size: 9.5pt; }
+  .terms-box li { margin-bottom: 6px; padding-left: 16px; position: relative; }
+  .terms-box li::before { content: "•"; color: #0d6e6e; font-weight: bold; position: absolute; left: 0; }
+  .guaranty { background: #f8faf9; border: 1px solid #e0e6e3; border-radius: 6px; padding: 14px; }
+  .guaranty ul { list-style: none; font-size: 9.5pt; }
+  .guaranty li { margin-bottom: 8px; padding-left: 16px; position: relative; }
+  .guaranty li::before { content: "•"; color: #0d6e6e; font-weight: bold; position: absolute; left: 0; }
+  .prereq ul { list-style: none; font-size: 9.5pt; }
+  .prereq li { margin-bottom: 6px; padding-left: 16px; position: relative; }
+  .prereq li::before { content: "•"; color: #0d6e6e; font-weight: bold; position: absolute; left: 0; }
+  .next-steps { counter-reset: step; }
+  .next-steps p { margin-bottom: 8px; padding-left: 28px; position: relative; font-size: 9.5pt; }
+  .next-steps p::before { counter-increment: step; content: counter(step) "."; position: absolute; left: 0; font-weight: 700; color: #0d6e6e; }
+  .signature { margin-top: 40px; padding-top: 20px; border-top: 1px dashed #ccc; text-align: right; font-style: italic; color: #666; font-size: 9.5pt; }
+  @media print {
+    .page { page-break-after: always; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="header">
+    <div class="company-info">
+      <img src="../../assets/logo-azienda.png" alt="ZetaByteNexus Logo" class="company-logo" onerror="this.style.display='none'">
+      <div class="company-details">
+        <strong>ZetaByteNexus</strong> di Stefano Bonfanti<br>
+        Via Mazzo, 73/B — 20017 RHO (MI) — ITALIA<br>
+        P.IVA / CF: BNFSFN66B13F704A<br>
+        <a href="mailto:info@zetabytenexus.it">info@zetabytenexus.it</a> | +39 335 7388349<br>
+        <a href="https://www.zetabytenexus.it">www.zetabytenexus.it</a>
+      </div>
+    </div>
+    <div class="doc-title">
+      <h1>PREVENTIVO</h1>
+      <div class="subtitle">n. 2026-07-001</div>
+    </div>
+  </header>
+
+  <div class="client-info">
+    <div><span class="label">Cliente:</span> [NOME_CLIENTE_FICTIOUS]</div>
+    <div><span class="label">Referente:</span> [REFERENTE_CLIENTE_FICTIOUS]</div>
+    <div><span class="label">Data:</span> 2026-07-06</div>
+    <div><span class="label">Validità:</span> 30 giorni</div>
+  </div>
+
+  <section class="section">
+    <h2>1. Contesto e obiettivi</h2>
+    <div class="objectives">
+      <p>La tua attività riceve richieste o dati da canali digitali che oggi vengono gestiti con interventi manuali. Questo porta a perdita di tempo prezioso, rischio di errori e ritardi nelle risposte.</p>
+      <p><strong>Obiettivi principali del progetto:</strong></p>
+      <ul>
+        <li>Automatizzare un micro-workflow specifico per ridurre il lavoro manuale.</li>
+        <li>Migliorare l'efficienza e la professionalità del primo contatto digitale.</li>
+        <li>Liberare tempo per attività a maggior valore.</li>
+      </ul>
+      <p><strong>Decisioni aperte da definire in fase di analisi iniziale:</strong></p>
+      <ul>
+        <li>Identificazione precisa del micro-workflow da automatizzare.</li>
+        <li>Scelta della singola miglioria alla presenza digitale (es. form, FAQ chatbot, integrazione tool appuntamenti).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>2. Ambito del progetto</h2>
+    <div class="scope-grid">
+      <div class="scope-box">
+        <h4>In scope</h4>
+        <ul>
+          <li>Analisi e identificazione di 1 singolo micro-workflow da automatizzare.</li>
+          <li>Sviluppo e implementazione di 1 micro-automazione (es. invio dati form a Google Sheets/Slack/Telegram).</li>
+          <li>Implementazione di 1 singola miglioria mirata alla presenza digitale (es. ottimizzazione form esistente, integrazione tool appuntamenti base).</li>
+          <li>Test della soluzione implementata.</li>
+          <li>Deploy in ambiente di produzione.</li>
+          <li>Sessione di mini-training per l'utilizzo.</li>
+        </ul>
+      </div>
+      <div class="scope-box">
+        <h4>Fuori scope / Esclusioni</h4>
+        <ul>
+          <li>Sviluppo di web app complete o siti web ex-novo.</li>
+          <li>Automazioni di processi multipli o complessi non specificati.</li>
+          <li>Integrazioni con sistemi CRM o ERP avanzati non previsti.</li>
+          <li>Campagne di marketing digitale o gestione pubblicitaria.</li>
+          <li>Modifiche estese al design o alla struttura del sito web esistente.</li>
+          <li>Qualsiasi attività non esplicitamente menzionata nella sezione "In scope".</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>2.b Rischi e dipendenze</h2>
+    <div class="risks">
+      <ul>
+        <li><strong>Espansione dello Scope:</strong> Il rischio principale è l'espansione del "singolo micro-workflow" a processi più complessi o la richiesta di integrare più sistemi. Sarà necessaria una chiara definizione iniziale e un rigoroso controllo delle richieste di modifica.</li>
+        <li><strong>API di Terze Parti:</strong> In caso di integrazione con servizi esterni, la stabilità e le modifiche future delle API dipenderanno dai fornitori terzi.</li>
+        <li><strong>Disponibilità Referente Cliente:</strong> La tempestività nel fornire feedback e accesso ai sistemi è cruciale per rispettare le tempistiche.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>3. Articolazione per milestone</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Milestone</th>
+          <th>Descrizione</th>
+          <th class="right">Ore stimate</th>
+          <th class="right">Importo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>M1 – Kickoff & Analisi</td>
+          <td>Avvio progetto, analisi del workflow e definizione dettagliata della miglioria digitale.</td>
+          <td class="right">20h</td>
+          <td class="right">1.000 €</td>
+        </tr>
+        <tr>
+          <td>M2 – Sviluppo & Implementazione</td>
+          <td>Sviluppo della micro-automazione e implementazione della miglioria digitale.</td>
+          <td class="right">30h</td>
+          <td class="right">1.500 €</td>
+        </tr>
+        <tr>
+          <td>M3 – Test & Deploy</td>
+          <td>Test integrati, deploy in produzione, mini-training e consegna finale.</td>
+          <td class="right">15h</td>
+          <td class="right">1.000 €</td>
+        </tr>
+        <tr class="total-row">
+          <td><strong>Totale</strong></td>
+          <td></td>
+          <td class="right"><strong>65h</strong></td>
+          <td class="right"><strong>3.500 €</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="notes">Le ore includono sviluppo, comunicazione, revisioni ragionevoli, test e documentazione interna essenziale. Le stime sono basate sulle informazioni attualmente disponibili e potranno essere raffinate in fase di analisi dettagliata.</p>
+  </section>
+
+  <section class="section">
+    <h2>4. Modello di prezzo</h2>
+    <div class="price-model">
+      <p>Il modello di prezzo proposto è <strong>fisso</strong> per la fase di sviluppo iniziale (MVP). Questo garantisce al Cliente un costo certo per un risultato tangibile e definito.</p>
+      <p>È previsto un <strong>mini-retainer opzionale</strong> per il mantenimento e il monitoraggio post-lancio.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>5. Condizioni economiche</h2>
+    <div class="terms">
+      <div class="terms-box">
+        <h4>Importo complessivo</h4>
+        <ul>
+          <li><strong>3.500 € + IVA</strong> (se applicabile)</li>
+        </ul>
+      </div>
+      <div class="terms-box">
+        <h4>Pagamento</h4>
+        <ul>
+          <li>40% alla firma</li>
+          <li>60% a collaudo</li>
+        </ul>
+      </div>
+    </div>
+    <p class="notes" style="margin-top: 12px;"><strong>Altre condizioni:</strong> Termini di pagamento 30 giorni data fattura. Le cifre indicate non includono eventuali costi di licenza di software di terze parti (se necessari).</p>
+  </section>
+
+  <section class="section">
+    <h2>6. Garanzia e manutenzione</h2>
+    <div class="guaranty">
+      <ul>
+        <li><strong>Periodo di garanzia correttiva:</strong> 30 giorni su bug di produzione relativi alla soluzione sviluppata.</li>
+        <li>Dopo la garanzia, possibilità di sottoscrivere il <strong>Mini-Retainer</strong> per:
+          <ul style="margin-left: 20px; margin-top: 6px; list-style: disc;">
+            <li><strong>200 €/mese</strong> per 3h incluse di monitoraggio, piccoli aggiustamenti e supporto tecnico.</li>
+            <li>Interventi extra: <strong>70 €/h</strong> (tariffa oraria standard).</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>7. Prerequisiti e responsabilità del cliente</h2>
+    <div class="prereq">
+      <ul>
+        <li>Un referente unico decisionale per il progetto.</li>
+        <li>Accesso necessario a sistemi, piattaforme e dati (es. accesso al sito web, credenziali per servizi terzi se richiesto per l'automazione).</li>
+        <li>Feedback tempestivo su prototipi e rilascio entro i tempi concordati per non ritardare il progetto.</li>
+        <li>Contenuti e testi necessari per la miglioria digitale.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>8. Prossimi passi</h2>
+    <div class="next-steps">
+      <p>Call di dettaglio per chiarire requisiti aperti e personalizzare l'offerta.</p>
+      <p>Conferma scritta del presente preventivo.</p>
+      <p>Emissione della fattura di acconto e pianificazione attività.</p>
+    </div>
+  </section>
+
+  <div class="signature">
+    _Firmato digitalmente da ZetaByteNexus_
+  </div>
+</div>
+</body>
+</html>
