@@ -17,7 +17,14 @@ function App() {
         <FrameworkSection />
         <WhatWeBuildSection />
         <WhySection />
-        <ContactSection />
+        <section className="py-24">
+          <div className="mx-auto max-w-6xl px-6 text-center">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold mb-3">Contact</h2>
+            <p className="text-sm text-muted max-w-md mx-auto">
+              Form contact temporarily unavailable. Check server logs for errors.
+            </p>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
