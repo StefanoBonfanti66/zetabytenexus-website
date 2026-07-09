@@ -4,7 +4,7 @@ import ProblemSection from './components/ProblemSection'
 import FrameworkSection from './components/FrameworkSection'
 import WhatWeBuildSection from './components/WhatWeBuildSection'
 import WhySection from './components/WhySection'
-import ContactSection from './components/ContactSection'
+// import ContactSection from './components/ContactSection'
 import Footer from './components/Footer'
 
 function App() {
