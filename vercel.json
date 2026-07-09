@@ -3,12 +3,5 @@
   "outputDirectory": "app/dist",
   "devCommand": "cd app && npm run dev",
   "installCommand": "cd app && npm install",
-  "framework": "vite",
-  "rewrites": [
-    { "source": "/robots.txt", "destination": "/robots.txt" },
-    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
-    { "source": "/favicon.ico", "destination": "/favicon.ico" },
-    { "source": "/assets/(.*)", "destination": "/assets/$1" },
-    { "source": "/(.*)", "destination": "/" }
-  ]
+  "framework": "vite"
 }
