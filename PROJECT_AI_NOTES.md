@@ -8,7 +8,7 @@ metodo ZetaByteNexus, canale di contatto/lead.
 ## Stack
 
 - React 19 + TypeScript + Vite 6 + TailwindCSS v4
-- Deploy target: da decidere (Vercel / GitHub Pages)
+- Deploy target: Vercel (progetto `zetabytenexus`, alias `www.zetabytenexus.it`)
 
 ## Stato attuale — 2026-06-26
 

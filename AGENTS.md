@@ -62,12 +62,22 @@ Agenti interni definiti in opencode-config:
 - **Disabilitato CodeQL default setup** su GitHub per risolvere conflitto con workflow avanzato
 - **Deploy Vercel funzionante** con icone social live su `www.zetabytenexus.it`
 
+### Completato (10-07-2026 - fix contact form)
+- **Fix root `api/contact.ts`**: sostituito stub con logica reale (Supabase insert + Resend email notification)
+- **Fix `app/package.json`**: ripristinate dipendenze frontend (era vuoto `{}`)
+- **Creato root `package.json`**: dipendenze API Vercel (`@supabase/supabase-js`, `@vercel/node`, `resend`)
+- **Rimosso catch-all rewrite** da `app/vercel.json` (reindirizzava `/api/contact` a `index.html`)
+- **Fix `opencode.json` locale**: aggiunto MCP `supabase` (mancante, sovrascriveva config globale)
+- **Tabella Supabase `contacts` verificata**: esiste, 0 record
+- **RLS da abilitare**: tabella accessibile via anon key senza policy — SQL migration fornita
+
 ### Da fare / Mancante
-- Form contatti funzionante (fase 2)
+- **Abilitare RLS** sulla tabella `contacts` in Supabase (SQL fornita)
+- Configurare env vars Vercel: `SUPABASE_SERVICE_KEY`, `RESEND_API_KEY` (opzionale)
+- Test end-to-end form contatti dopo deploy
 - Ritocchi SEO e performance
 - Definire posizionamento e offerta servizi in `docs/leads/`
-- Preparare pagina lead generation / contatti
 - Convertire immagine in WebP per performance migliori
 
 ### Prossimo step concreto
-Form contatti e lead pipeline.
+Abilitare RLS, configurare env vars Vercel, testare form end-to-end.

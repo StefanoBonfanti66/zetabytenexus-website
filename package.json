@@ -1,0 +1,9 @@
+{
+  "name": "zetabytenexus-website-api",
+  "private": true,
+  "dependencies": {
+    "@supabase/supabase-js": "^2.97.0",
+    "@vercel/node": "^5.3.0",
+    "resend": "^6.17.1"
+  }
+}
