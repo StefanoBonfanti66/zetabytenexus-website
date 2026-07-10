@@ -73,16 +73,16 @@ Agenti interni definiti in opencode-config:
 
 ### In corso
 - Integrazione form contatti pronta lato codice (API + frontend + RLS)
-
-### Blocco
-- **Mancano env vars Vercel**: `SUPABASE_SERVICE_KEY` (obbligatoria) e opzionalmente `RESEND_API_KEY` e `VITE_SUPABASE_URL` da inserire manualmente nel dashboard Vercel → Progetto `zetabytenexus` → Settings → Environment Variables → Production.
+- **API endpoint live**: `https://www.zetabytenexus.it/api/contact` risponde correttamente (405 su GET = logica routing OK)
+- **Env vars**: già configurate in Vercel (progetto era in produzione, form funzionava prima)
+- **MCP Vercel limitation**: non dispone di tool per elencare env vars — impossibile confermare/smentire la loro presenza via MCP
 
 ### Da fare / Mancante
-- Configurare env vars Vercel da dashboard (da fare manualmente, segreto non in chat/repo)
-- Test end-to-end form contatti dopo deploy
+- **Test end-to-end POST** su `https://www.zetabytenexus.it/api/contact` per confermare che le env vars sono accessibili dalla serverless function
+- Se il test fallisce: verificare runtime logs Vercel per l'errore reale (non dedurre da config locale)
 - Ritocchi SEO e performance
 - Definire posizionamento e offerta servizi in `docs/leads/`
 - Convertire immagine in WebP per performance migliori
 
 ### Prossimo step concreto
-Inserire le env vars nel pannello Vercel, redeploy automatico da push su `main`, test form su `https://www.zetabytenexus.it`.
+Testare il form con un POST reale (nome, email, messaggio) su `https://www.zetabytenexus.it`. Se funziona → done. Se fallisce → leggere runtime logs Vercel per diagnosticare l'errore reale.
