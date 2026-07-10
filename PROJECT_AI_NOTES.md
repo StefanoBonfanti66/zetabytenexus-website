@@ -8,25 +8,53 @@ metodo ZetaByteNexus, canale di contatto/lead.
 ## Stack
 
 - React 19 + TypeScript + Vite 6 + TailwindCSS v4
-- Deploy target: Vercel (progetto `zetabytenexus`, alias `www.zetabytenexus.it`)
+- Deploy: Vercel (progetto `zetabytenexus`, dominio `www.zetabytenexus.it`)
+- Backend: API route Vercel (`/api/contact`) con Supabase (tabella `contacts`) + Resend (email notification)
+- MCP: Supabase, Playwright, DuckDuckGo, filesystem configurati in `opencode.json`
 
-## Stato attuale — 2026-06-26
+## Stato attuale — 2026-07-10
 
-- **Homepage completa** — build pulita (0 errori, 0 warning), QA passed
-- 7 sezioni: Hero, ProblemSection, FrameworkSection, WhatWeBuildSection,
-  WhySection, ContactSection, Footer + Header
+**Homepage live su `www.zetabytenexus.it`:**
+- 7 sezioni: Hero, ProblemSection, FrameworkSection, WhatWeBuildSection, WhySection, ContactSection + Header/Footer
 - Design system: palette petrolio/warm-white/antracite, IBM Plex Serif + Inter
 - Favicon brandizzata ZBN con supporto dark mode
-- Responsive desktop + mobile, menu accessibile, anchor navigation nativa
-- Pronta per deploy su dominio zetabytenexus.it
+- Responsive desktop + mobile, menu accessibile con aria + ESC focus management
+- Anchor navigation nativa con scroll-padding-top
 
-## Vincoli fase 1
+**Form contatti funzionante:**
+- Endpoint `/api/contact` con Supabase insert (tabella `contacts`) + Resend (notifica email)
+- RLS attivo: solo `service_role` può inserire/leggere
+- Catch-all rewrite rimosso da `vercel.json` (bloccava le API route)
 
-- Solo frontend statico, nessun backend
-- Form contatti non operativo (solo CTA + email + eventuali riferimenti diretti)
+**SEO / Performance:**
+- Meta description keyword-optimized (155 char)
+- Open Graph completo (type, url, title, description, image 1200x630, locale, site_name)
+- Twitter Card (summary_large_image)
+- Canonical URL + robots meta + theme-color
+- JSON-LD structured data: Organization + WebSite schema
+- Sitemap.xml + robots.txt serviti staticamente
+- Immagine homepage: PNG 250KB → WebP 23KB (-90%)
+- OG image creata (1200x630, dark background)
+- Hero: `loading="eager"` + width/height espliciti (evita CLS)
+
+**Layout Hero:**
+- Immagine spostata dalla colonna destra (dietro FrameworkDiagram) a sopra il titolo nella colonna sinistra
+
+**Social:**
+- Icone Instagram, LinkedIn, Facebook in Header e Footer
+
+**Infrastruttura:**
+- Vercel: Deployment Protection disabilitata (accesso pubblico senza login)
+- `vercel.json` con build da `app/`
+- Fix CSS layers per evitare override Tailwind
+- Build QA sempre pulita (0 errori, 0 warning)
+
+## Vincoli attuali
+
 - Singola pagina verticale, nessun routing interno
 - Contenuti hardcoded in React, nessun CMS
 - No dark mode, no multi-lingua, no animazioni complesse
+- Tabella `contacts` Supabase: 0 record (nessun lead ricevuto)
 
 ## Decisioni approvate
 
@@ -37,9 +65,12 @@ metodo ZetaByteNexus, canale di contatto/lead.
 - **Logo**: logo-azienda.png (provvisorio)
 - **Repo separato da opencode-config**: sì
 - **Obsidian**: solo nota overview, nessun duplicato
+- **Backend contact form**: Supabase (dati) + Resend (notifica), nessun DB dedicato
+- **SEO**: approccio statico (meta, OG, JSON-LD), no plugin/server-side
 
 ## Prossimi step
 
-1. Deploy su dominio zetabytenexus.it (Vercel o GitHub Pages)
-2. Eventuale form contatti funzionante (fase 2)
-3. Eventuali ritocchi SEO e performance
+1. **Definire posizionamento e offerta servizi** → `docs/leads/` (brief, positioning, pricing)
+2. **Sitemap/robots dinamici** (opzionale) se si aggiungono pagine
+3. **Monitoraggio lead** → verificare record `contacts` su Supabase
+4. **Eventuale blog/casi studio** in fasi successive
