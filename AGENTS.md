@@ -72,6 +72,15 @@ Agenti interni definiti in opencode-config:
 - **RLS abilitato**: tabella `contacts` protetta — solo `service_role` può inserire/leggere
 - **Form contatti live e funzionante** su `https://www.zetabytenexus.it/api/contact`
 
+### Completato (10-07-2026 - SEO + performance)
+- **Meta description** keyword-optimized (155 char)
+- **Open Graph** completo (type, url, title, description, image 1200x630, locale, site_name)
+- **Twitter Card** (summary_large_image)
+- **Canonical URL** + robots meta + theme-color
+- **JSON-LD structured data**: Organization + WebSite schema
+- **Img homepage**: PNG 250KB → WebP 23KB (-90%)
+- **OG image** creata (1200x630, dark background)
+- **Hero.tsx**: `loading="eager"` + width/height espliciti (evita CLS)
+
 ### In corso
-- Ritocchi SEO e performance
 - Definire posizionamento e offerta servizi in `docs/leads/`
