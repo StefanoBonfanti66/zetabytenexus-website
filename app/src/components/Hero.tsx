@@ -23,6 +23,14 @@ function Hero() {
       <div className="mx-auto max-w-6xl w-full px-6">
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           <div className="flex flex-col gap-6">
+            <img
+              src="/img-homepage.webp"
+              alt="ZetaByteNexus — ecosistema digitale"
+              className="w-full max-w-md self-start"
+              loading="eager"
+              width="544"
+              height="251"
+            />
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-text leading-tight">
               Progettare, sviluppare, documentare.<br />
               <span className="text-accent">Con un metodo solo.</span>
@@ -42,15 +50,6 @@ function Hero() {
             </div>
           </div>
           <div className="relative hidden md:flex justify-center items-center">
-            <img
-              src="/img-homepage.webp"
-              alt=""
-              className="absolute inset-0 w-full h-full object-contain opacity-20 pointer-events-none select-none"
-              aria-hidden="true"
-              loading="eager"
-              width="544"
-              height="251"
-            />
             <FrameworkDiagram />
           </div>
         </div>
