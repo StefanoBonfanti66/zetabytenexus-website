@@ -69,15 +69,20 @@ Agenti interni definiti in opencode-config:
 - **Rimosso catch-all rewrite** da `app/vercel.json` (reindirizzava `/api/contact` a `index.html`)
 - **Fix `opencode.json` locale**: aggiunto MCP `supabase` (mancante, sovrascriveva config globale)
 - **Tabella Supabase `contacts` verificata**: esiste, 0 record
-- **RLS da abilitare**: tabella accessibile via anon key senza policy — SQL migration fornita
+- **RLS abilitato**: tabella `contacts` protetta — solo `service_role` può inserire/leggere
+
+### In corso
+- Integrazione form contatti pronta lato codice (API + frontend + RLS)
+
+### Blocco
+- **Mancano env vars Vercel**: `SUPABASE_SERVICE_KEY` (obbligatoria) e opzionalmente `RESEND_API_KEY` e `VITE_SUPABASE_URL` da inserire manualmente nel dashboard Vercel → Progetto `zetabytenexus` → Settings → Environment Variables → Production.
 
 ### Da fare / Mancante
-- **Abilitare RLS** sulla tabella `contacts` in Supabase (SQL fornita)
-- Configurare env vars Vercel: `SUPABASE_SERVICE_KEY`, `RESEND_API_KEY` (opzionale)
+- Configurare env vars Vercel da dashboard (da fare manualmente, segreto non in chat/repo)
 - Test end-to-end form contatti dopo deploy
 - Ritocchi SEO e performance
 - Definire posizionamento e offerta servizi in `docs/leads/`
 - Convertire immagine in WebP per performance migliori
 
 ### Prossimo step concreto
-Abilitare RLS, configurare env vars Vercel, testare form end-to-end.
+Inserire le env vars nel pannello Vercel, redeploy automatico da push su `main`, test form su `https://www.zetabytenexus.it`.
