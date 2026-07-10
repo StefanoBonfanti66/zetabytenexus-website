@@ -90,3 +90,6 @@ Agenti interni definiti in opencode-config:
 
 ### In corso
 - Definire posizionamento e offerta servizi in `docs/leads/`
+
+### Prossimo step concreto
+- Definire posizionamento e offerta servizi — creare brief in `docs/leads/` con @marketing
