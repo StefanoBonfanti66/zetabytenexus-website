@@ -70,19 +70,8 @@ Agenti interni definiti in opencode-config:
 - **Fix `opencode.json` locale**: aggiunto MCP `supabase` (mancante, sovrascriveva config globale)
 - **Tabella Supabase `contacts` verificata**: esiste, 0 record
 - **RLS abilitato**: tabella `contacts` protetta — solo `service_role` può inserire/leggere
+- **Form contatti live e funzionante** su `https://www.zetabytenexus.it/api/contact`
 
 ### In corso
-- Integrazione form contatti pronta lato codice (API + frontend + RLS)
-- **API endpoint live**: `https://www.zetabytenexus.it/api/contact` risponde correttamente (405 su GET = logica routing OK)
-- **Env vars**: già configurate in Vercel (progetto era in produzione, form funzionava prima)
-- **MCP Vercel limitation**: non dispone di tool per elencare env vars — impossibile confermare/smentire la loro presenza via MCP
-
-### Da fare / Mancante
-- **Test end-to-end POST** su `https://www.zetabytenexus.it/api/contact` per confermare che le env vars sono accessibili dalla serverless function
-- Se il test fallisce: verificare runtime logs Vercel per l'errore reale (non dedurre da config locale)
 - Ritocchi SEO e performance
 - Definire posizionamento e offerta servizi in `docs/leads/`
-- Convertire immagine in WebP per performance migliori
-
-### Prossimo step concreto
-Testare il form con un POST reale (nome, email, messaggio) su `https://www.zetabytenexus.it`. Se funziona → done. Se fallisce → leggere runtime logs Vercel per diagnosticare l'errore reale.
