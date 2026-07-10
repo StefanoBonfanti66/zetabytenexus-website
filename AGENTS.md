@@ -34,7 +34,7 @@ Agenti interni definiti in opencode-config:
 - Config globale vive in `opencode-config`.
 - Dati reali del progetto (lead, preventivi, fatture) vivono in QUESTO repo.
 
-## Current Focus — 2026-07-08
+## Current Focus — 2026-07-10
 
 ### Completato (sessioni precedenti)
 - **Homepage istituzionale completa e live su `https://www.zetabytenexus.it`**
@@ -81,6 +81,12 @@ Agenti interni definiti in opencode-config:
 - **Img homepage**: PNG 250KB → WebP 23KB (-90%)
 - **OG image** creata (1200x630, dark background)
 - **Hero.tsx**: `loading="eager"` + width/height espliciti (evita CLS)
+
+### Completato (10-07-2026 - Hero layout)
+- **Img-homepage.webp spostata** dalla colonna destra (dietro FrameworkDiagram, opacità 20%) a sopra il titolo "Progettare, sviluppare" nella colonna sinistra
+- **Rimosso** l'`<img>` assoluto dalla colonna destra
+- **Build QA**: 0 errori, 0 warning
+- **Deploy Vercel live** su `www.zetabytenexus.it`
 
 ### In corso
 - Definire posizionamento e offerta servizi in `docs/leads/`
