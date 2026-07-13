@@ -8,6 +8,7 @@ Refer to `~/Scrivania/Progetti/opencode-config/AGENTS.md` for global rules.
 - **Scopo:** Sito web istituzionale ZetaByteNexus — vetrina servizi, lead generation, presentazione aziendale.
 - **Stack:** React 19 + TypeScript + Vite + TailwindCSS + Vercel.
 - **Repo:** `StefanoBonfanti66/zetabytenexus-website` (privato).
+- **Stato:** commerciale=active / operativo=production / amministrativo=active
 
 ## Standard di progetto
 
@@ -19,7 +20,7 @@ Refer to `~/Scrivania/Progetti/opencode-config/AGENTS.md` for global rules.
   - `docs/invoices/` → fatture + index.md
 - Template disponibili in `templates/` (copiati da opencode-config).
 - Asset aziendali in `assets/` (logo, brand).
-- Ledger di progetto in `docs/admin/zetabytenexus-website-ledger.md`.
+- Ledger di progetto in `docs/admin/ledger.md`.
 
 ## Agenti di riferimento
 
