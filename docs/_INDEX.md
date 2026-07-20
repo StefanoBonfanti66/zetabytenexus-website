@@ -5,11 +5,10 @@
 Per una vista navigabile, apri il vault **ZBN-Navigator** e cerca la nota [[Progetto zetabytenexus-website – Overview]].
 
 ## Documentazione Operativa
-
 | Area | Descrizione |
 | :--- | :--- |
 | [overview.md](overview.md) | Prodotto, stato, stack |
-| [leads/](leads/) | Lead generati dal sito |
+| [leads/](leads/) | Lead generati dal sito + `zetabytenexus-website-brief.md` (brief posizionamento/offerta) |
 | [proposals/](proposals/) | Preventivi e proposte |
 | [project/](project/) | Piani, kickoff, guide (TODO) |
 | [admin/](admin/) | Cashflow, ledger, solleciti |
