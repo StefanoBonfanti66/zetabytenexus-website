@@ -89,8 +89,13 @@ Agenti interni definiti in opencode-config:
 - **Build QA**: 0 errori, 0 warning
 - **Deploy Vercel live** su `www.zetabytenexus.it`
 
+### Completato (20-07-2026 - leads brief)
+- Creato `docs/leads/zetabytenexus-website-brief.md` (brief posizionamento/offerta, esteso dai contenuti di `App.tsx`)
+- Aggiornato `docs/_INDEX.md` con la voce leads (tabella già presente su remote)
+- Commit `a41199d` pushato su `origin/main` dopo rebase su lavoro remote (immagini OG, GTM, dependabot)
+
 ### In corso
-- Definire posizionamento e offerta servizi in `docs/leads/`
+- Definire posizionamento e offerta servizi: brief fatto, mancano `positioning.md` e `pricing.md`
 
 ### Prossimo step concreto
-- Definire posizionamento e offerta servizi — creare brief in `docs/leads/` con @marketing
+- Produrre `docs/leads/zetabytenexus-website-positioning.md` con @marketing, poi `pricing.md` con @pricing

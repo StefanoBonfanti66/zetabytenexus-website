@@ -68,9 +68,15 @@ metodo ZetaByteNexus, canale di contatto/lead.
 - **Backend contact form**: Supabase (dati) + Resend (notifica), nessun DB dedicato
 - **SEO**: approccio statico (meta, OG, JSON-LD), no plugin/server-side
 
+## Stato attuale — 2026-07-20
+
+- **Brief leads creato** (`docs/leads/zetabytenexus-website-brief.md`): posizionamento/offerta servizi derivati dalle sezioni homepage.
+- Remote allineato: immagini OG (`img-homepage.webp`), Google Tag Manager in `index.html`, aggiornamenti dependabot.
+- Prossimo: `docs/leads/positioning.md` (con @marketing) e `pricing.md` (con @pricing).
+
 ## Prossimi step
 
-1. **Definire posizionamento e offerta servizi** → `docs/leads/` (brief, positioning, pricing)
+1. **Definire posizionamento e offerta servizi** → `docs/leads/positioning.md` + `pricing.md`
 2. **Sitemap/robots dinamici** (opzionale) se si aggiungono pagine
 3. **Monitoraggio lead** → verificare record `contacts` su Supabase
 4. **Eventuale blog/casi studio** in fasi successive
