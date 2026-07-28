@@ -19,42 +19,50 @@ function FrameworkDiagram() {
 
 function Hero() {
   return (
-    <section id="hero" className="min-h-[calc(100vh-4rem)] flex items-center py-20 md:py-24">
-      <div className="mx-auto max-w-6xl w-full px-6">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-          <div className="flex flex-col gap-6">
+    <section id="hero">
+      <div className="w-full border-b border-border bg-gradient-to-b from-accent/[0.04] to-transparent">
+        <div className="mx-auto max-w-6xl px-6 py-8 md:py-14">
+          <div className="flex justify-center">
             <img
               src="/img-homepage.webp"
               alt="ZetaByteNexus — ecosistema digitale"
-              className="w-full max-w-md self-start"
+              className="w-full max-w-4xl h-auto"
               loading="eager"
               width="544"
               height="251"
             />
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-text leading-tight">
-              Progettare, sviluppare, documentare.<br />
-              <span className="text-accent">Con un metodo solo.</span>
-            </h1>
-            <p className="text-base md:text-lg text-muted leading-relaxed max-w-xl">
-              ZetaByteNexus unisce documentazione, automazione e knowledge layer in un ecosistema unico. Niente processi astratti, solo ciò che serve.
-            </p>
-            <div className="flex flex-wrap gap-4 pt-2">
-              <a href="#contact"
-                 className="inline-block px-6 py-3 bg-accent text-white text-sm no-underline hover:bg-accent-hover transition-colors duration-200">
-                Parlane con noi
-              </a>
-              <a href="#framework"
-                 className="inline-block px-6 py-3 border border-text text-text text-sm no-underline hover:bg-text hover:text-bg transition-colors duration-200">
-                Scopri il metodo
-              </a>
-            </div>
-          </div>
-          <div className="relative hidden md:flex justify-center items-center">
-            <FrameworkDiagram />
           </div>
         </div>
-        <div className="md:hidden flex justify-center mt-12">
-          <FrameworkDiagram />
+      </div>
+      <div className="flex items-center py-16 md:py-20">
+        <div className="mx-auto max-w-6xl w-full px-6">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+            <div className="flex flex-col gap-6">
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-text leading-tight">
+                Progettare, sviluppare, documentare.<br />
+                <span className="text-accent">Con un metodo solo.</span>
+              </h1>
+              <p className="text-base md:text-lg text-muted leading-relaxed max-w-xl">
+                ZetaByteNexus unisce documentazione, automazione e knowledge layer in un ecosistema unico. Niente processi astratti, solo ciò che serve.
+              </p>
+              <div className="flex flex-wrap gap-4 pt-2">
+                <a href="#contact"
+                   className="inline-block px-6 py-3 bg-accent text-white text-sm no-underline hover:bg-accent-hover transition-colors duration-200">
+                  Parlane con noi
+                </a>
+                <a href="#framework"
+                   className="inline-block px-6 py-3 border border-text text-text text-sm no-underline hover:bg-text hover:text-bg transition-colors duration-200">
+                  Scopri il metodo
+                </a>
+              </div>
+            </div>
+            <div className="relative hidden md:flex justify-center items-center">
+              <FrameworkDiagram />
+            </div>
+          </div>
+          <div className="md:hidden flex justify-center mt-12">
+            <FrameworkDiagram />
+          </div>
         </div>
       </div>
     </section>
