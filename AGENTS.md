@@ -35,7 +35,14 @@ Agenti interni definiti in opencode-config:
 - Config globale vive in `opencode-config`.
 - Dati reali del progetto (lead, preventivi, fatture) vivono in QUESTO repo.
 
-## Current Focus — 2026-07-10
+## Current Focus — 2026-09-08
+
+### Completato (08-09-2026 - fix form contatto + keep-alive Supabase)
+- **Diagnosi errore form contatto**: API `/api/contact` rispondeva `500 fetch failed` perché il progetto Supabase `pexsoyebetwosuffjofs` era in **pausa automatica free tier per inattività** (~7 giorni senza attività DB). Account Supabase del sito è un SECONDO account (non `s.bonfanti@vetronaviglio.it`). Riattivato dall'utente dal pannello → form di nuovo funzionante.
+- **Prevenzione**: creato `api/health.ts` (endpoint GET read-only, verifica connettività Supabase, live su Vercel) + `.github/workflows/keep-alive.yml` (cron 09:00 UTC, query REST giornaliera con anon key per evitare la pausa, monitora health endpoint, notifica Telegram su fallimento). Secrets GitHub aggiunti: `SUPABASE_URL`, `SUPABASE_ANON_KEY`. Workflow verde.
+- **Fix CodeQL**: riga corrotta (`email.trim(),n`) in `app/api/contact.ts` → syntax error nelle scansioni JS/TS. Riparata (commit `d03e850`). Warning `telegram-test.yml` già coperto da `permissions: {}` (commit `1562c8e`).
+- **Test notifica Telegram** sui canali ZBN (bot `zbn_billing_bot`) → OK.
+- Commit `40e7d98`, `ce4470d`, `d03e850` pushati su `origin/main`.
 
 ### Completato (sessioni precedenti)
 - **Homepage istituzionale completa e live su `https://www.zetabytenexus.it`**
@@ -96,6 +103,7 @@ Agenti interni definiti in opencode-config:
 
 ### In corso
 - Definire posizionamento e offerta servizi: brief fatto, mancano `positioning.md` e `pricing.md`
+- Valutare bridge Telegram↔opencode (bot `zbn_billing_bot` già attivo su canali ZBN): da area relay con `opencode serve`, idea non avviata.
 
 ### Prossimo step concreto
 - Produrre `docs/leads/zetabytenexus-website-positioning.md` con @marketing, poi `pricing.md` con @pricing
