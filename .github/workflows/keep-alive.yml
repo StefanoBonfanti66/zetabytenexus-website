@@ -32,14 +32,18 @@ jobs:
 
       - name: Notify on failure
         if: steps.keepalive.outputs.http_code != '200' || steps.health.outputs.http_code != '200'
-        uses: ./.github/workflows/telegram-notify-reusable.yml
-        with:
-          message: |
-            ⚠️ Keep-Alive / Monitor fallito
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          jq -n \
+            --arg chat_id "$TELEGRAM_CHAT_ID" \
+            --arg text "⚠️ Keep-Alive / Monitor fallito
             Repo: ${{ github.repository }}
             Supabase keep-alive: HTTP ${{ steps.keepalive.outputs.http_code }}
             /api/health: HTTP ${{ steps.health.outputs.http_code }}
-            Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-        secrets:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+            Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            '{chat_id: $chat_id, text: $text, disable_web_page_preview: true}' \
+          | curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+              -H "Content-Type: application/json" \
+              -d @-
