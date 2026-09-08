@@ -52,7 +52,8 @@ export async function POST(request: Request): Promise<Response> {
   try {
     const { error } = await supabase.from('contacts').insert({
       name: name.trim(),
-      email: email.trim(),n      message: message.trim(),
+      email: email.trim(),
+      message: message.trim(),
     })
 
     if (error) {
