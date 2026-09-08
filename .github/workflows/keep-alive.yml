@@ -1,0 +1,45 @@
+name: Keep-Alive & Monitor
+
+on:
+  schedule:
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Keep Supabase alive (read-only DB query)
+        id: keepalive
+        run: |
+          code=$(curl -s -o /tmp/keepalive.json -w "%{http_code}" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
+            "${{ secrets.SUPABASE_URL }}/rest/v1/contacts?select=id&limit=1")
+          echo "http_code=$code" >> "$GITHUB_OUTPUT"
+          echo "Supabase keep-alive HTTP: $code"
+
+      - name: Check site /api/health
+        id: health
+        run: |
+          code=$(curl -s -o /tmp/health.json -w "%{http_code}" \
+            --max-time 20 "https://www.zetabytenexus.it/api/health")
+          echo "http_code=$code" >> "$GITHUB_OUTPUT"
+          echo "Health endpoint HTTP: $code"
+
+      - name: Notify on failure
+        if: steps.keepalive.outputs.http_code != '200' || steps.health.outputs.http_code != '200'
+        uses: ./.github/workflows/telegram-notify-reusable.yml
+        with:
+          message: |
+            ⚠️ Keep-Alive / Monitor fallito
+            Repo: ${{ github.repository }}
+            Supabase keep-alive: HTTP ${{ steps.keepalive.outputs.http_code }}
+            /api/health: HTTP ${{ steps.health.outputs.http_code }}
+            Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        secrets:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
